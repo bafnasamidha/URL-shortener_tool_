@@ -2,7 +2,11 @@ const express = require("express");
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
+router.get("/", async(req, res) => {
+  if(!req.user){
+    return res.redirect("/login");
+  }
+  const allURL=await URL.find({createdBy:req.user._id});//
   return res.render("home");
 });
 
