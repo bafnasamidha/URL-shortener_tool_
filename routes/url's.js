@@ -8,8 +8,6 @@ const {
   handleGetAnalytics,
 } = require("../controller/url's");
 
-
-
 router.post("/", handleGenerateShortURL);
 
 router.get("/:id", handleDirectsURL);

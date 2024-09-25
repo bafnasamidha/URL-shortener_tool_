@@ -12,7 +12,7 @@ async function handleGenerateShortURL(req, res) {
     shortURL: shortID,
     originalURL: body.url,
     visitHistory: [],
-    createdBy:req.user._id,
+    createdBy: req.user._id,
   });
   // return res.json({ msg: shortID });
   return res.render("home", {

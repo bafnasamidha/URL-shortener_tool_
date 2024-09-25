@@ -18,10 +18,10 @@ const urlSchema = mongoose.Schema(
         },
       },
     ],
-    createdBy:{
-      type:mongoose.Schema.Types.ObjectId,
-      ref:"users",
-    }
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "users",
+    },
   },
   {
     timestamps: true,
