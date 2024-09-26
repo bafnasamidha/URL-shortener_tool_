@@ -13,8 +13,8 @@ const staticRoute = require("./routes/staticRouter.js");
 
 
 const {
-  restrictToLoggedinUserOnly,
-  checkAuth,
+  checkForAuthentication,
+  restrictTo
 } = require("./middleware/auth.js");
 
 connectMongoDb("mongodb://127.0.0.1:27017/short-url");
@@ -24,10 +24,11 @@ app.set("views", path.resolve("./views"));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(checkForAuthentication);
 
 app.use("/user", userRoute);
 
-app.use("/url", restrictToLoggedinUserOnly, URLRoute);
+app.use("/url", restrictTo(["Normal"]), URLRoute);
 
 app.use("/", checkAuth, staticRoute);
 
