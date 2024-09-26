@@ -11,6 +11,7 @@ const URLRoute = require("./routes/url's.js");
 const userRoute = require("./routes/user.js");
 const staticRoute = require("./routes/staticRouter.js");
 
+
 const {
   restrictToLoggedinUserOnly,
   checkAuth,
