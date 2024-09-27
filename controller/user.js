@@ -23,10 +23,10 @@ async function handleUserLogin(req, res) {
   }
   // const sessionId = uuidv4();
   const token = setUser(user);
-  // res.cookie("token", token);
+  res.cookie("token", token);
 
-  return res.json({token});
-  // return res.render("home");
+  // return res.json({token});
+  return res.render("home");
 }
 
 module.exports = { handleUserSignup, handleUserLogin };
